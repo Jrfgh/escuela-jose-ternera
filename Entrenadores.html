@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Entrenadores - EFD José Ternera</title>
+    <style>
+        :root {
+            --verde: #1b7a42;
+            --blanco: #ffffff;
+            --rojo: #d92525;
+            --gris-fondo: #f4f6f8;
+            --texto: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        header {
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--rojo);
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+        }
+
+        .btn-logout {
+            background-color: var(--rojo);
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: var(--verde);
+            border-bottom: 2px solid var(--rojo);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .grid-acciones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-action {
+            background-color: var(--verde);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--verde);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>👨‍🏫 Panel del Entrenador - EFD José Ternera</h1>
+        <a href="login.html" class="btn-logout">Cerrar Sesión</a>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Gestión Deportiva</h2>
+            <div class="grid-acciones">
+                <button class="btn-action">➕ Registrar Nuevo Deportista</button>
+                <button class="btn-action">📋 Tomar Asistencia</button>
+                <button class="btn-action">📊 Registrar Evaluación / Rendimiento</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Lista de Deportistas Registrados</h2>
+            <p style="margin-bottom: 10px; color: #666; font-size: 0.9rem;">
+                * La base de datos y la lista de nombres se vinculará en el siguiente paso.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Asistencia</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align: center; color: #777;">Sin datos registrados aún</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
