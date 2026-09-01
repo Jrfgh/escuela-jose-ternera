@@ -103,12 +103,12 @@
         <h2>Plataforma EFD</h2>
         <p>Escuela de Formación Deportiva José Ternera</p>
         
-        <form>
+        <form id="loginForm">
             <div class="form-group">
                 <label for="rol">Tipo de Usuario</label>
                 <select id="rol" required>
-                    <option value="deportista">Deportista / Acudiente</option>
-                    <option value="entrenador">Entrenador / Administrador</option>
+                    <option value="deportistas.html">Deportista / Acudiente</option>
+                    <option value="entrenadores.html">Entrenador / Administrador</option>
                 </select>
             </div>
 
@@ -127,6 +127,14 @@
 
         <a href="index.html" class="volver-link">← Volver a la página principal</a>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const destino = document.getElementById('rol').value;
+            window.location.href = destino;
+        });
+    </script>
 
 </body>
 </html>
