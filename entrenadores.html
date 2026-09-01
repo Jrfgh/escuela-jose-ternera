@@ -110,15 +110,17 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    // Conexión con Supabase
+    // URL base de Supabase sin /rest/v1/
     const SUPABASE_URL = 'https://qfoqiwutfcgjuhwebmrl.supabase.co';
+    // Clave anon JWT pública
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFmb3Fpd3V0ZmNnanVodmVibXJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyMjYwMDIsImV4cCI6MjEwMzgwMjAwMn0.q0_glCINtKQ1mUUjHaJYopTZb_WusVpGfjBO_kTXp_4';
+    
     const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     const tablaBody = document.getElementById('tablaDeportistas');
     const form = document.getElementById('formDeportista');
 
-    // Función para obtener y listar deportistas de la base de datos
+    // Cargar y listar deportistas
     async function cargarDeportistas() {
       const { data, error } = await _supabase
         .from('deportistas')
@@ -133,7 +135,7 @@
 
       tablaBody.innerHTML = '';
 
-      if (data.length === 0) {
+      if (!data || data.length === 0) {
         tablaBody.innerHTML = '<tr><td colspan="6">No hay deportistas registrados aún.</td></tr>';
         return;
       }
@@ -154,7 +156,7 @@
       });
     }
 
-    // Guardar nuevo deportista desde el formulario
+    // Guardar nuevo deportista
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -176,7 +178,7 @@
       }
     });
 
-    // Aumentar contador de asistencia
+    // Sumar asistencia
     async function sumarAsistencia(id, asistenciaActual) {
       const { error } = await _supabase
         .from('deportistas')
@@ -190,7 +192,7 @@
       }
     }
 
-    // Cargar los datos al abrir la página
+    // Cargar al iniciar la página
     document.addEventListener('DOMContentLoaded', cargarDeportistas);
   </script>
 </body>
