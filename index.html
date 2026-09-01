@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela de Formación Deportiva José Ternera</title>
+    <style>
+        :root {
+            --verde: #1b7a42;
+            --blanco: #ffffff;
+            --rojo: #d92525;
+            --gris-fondo: #f4f6f8;
+            --texto: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        header {
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--rojo);
+        }
+
+        nav {
+            background-color: #145930;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--blanco);
+            margin-bottom: 1rem;
+        }
+
+        .lema {
+            font-style: italic;
+            color: var(--rojo);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: var(--verde);
+            border-bottom: 2px solid var(--rojo);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .categoria-item {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--gris-fondo);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--verde);
+            color: var(--blanco);
+            margin-top: 2rem;
+        }
+
+        .login-btn {
+            background-color: var(--rojo);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Escuela de Formación Deportiva José Ternera</h1>
+        <p class="lema">“Donde el juego es pasión, la formación es compromiso y el equipo es familia.”</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#futbol">Fútbol</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#entrenadores">Entrenadores</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#login" class="login-btn">🔐 Inicio de Sesión</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="inicio" class="card">
+            <h2>Bienvenidos</h2>
+            <p>Página oficial de la Escuela de Formación Deportiva José Ternera. Formamos deportistas con valores, disciplina y trabajo en equipo.</p>
+        </section>
+
+        <section id="categorias" class="card">
+            <h2>👦 Categorías de Fútbol</h2>
+            <div class="grid-categorias">
+                <div class="categoria-item">
+                    <h3>Tetero</h3>
+                    <p>5 – 8 años</p>
+                </div>
+                <div class="categoria-item">
+                    <h3>Infantil</h3>
+                    <p>9 – 11 años</p>
+                </div>
+                <div class="categoria-item">
+                    <h3>Prejuvenil</h3>
+                    <p>12 – 15 años</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="card">
+            <h2>🏫 Quiénes somos</h2>
+            <p>Somos un proyecto dedicado al desarrollo integral de niños y jóvenes a través del deporte.</p>
+        </section>
+
+        <section id="contacto" class="card">
+            <h2>📞 Contacto</h2>
+            <p>Ponte en contacto con nosotros para inscripciones e información general.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Escuela de Formación Deportiva José Ternera</p>
+    </footer>
+
+</body>
+</html>
