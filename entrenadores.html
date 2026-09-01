@@ -1,161 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Entrenadores - EFD José Ternera</title>
-    <style>
-        :root {
-            --verde: #1b7a42;
-            --blanco: #ffffff;
-            --rojo: #d92525;
-            --gris-fondo: #f4f6f8;
-            --texto: #333333;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--gris-fondo);
-            color: var(--texto);
-        }
-
-        header {
-            background-color: var(--verde);
-            color: var(--blanco);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--rojo);
-        }
-
-        header h1 {
-            font-size: 1.2rem;
-        }
-
-        .btn-logout {
-            background-color: var(--rojo);
-            color: white;
-            padding: 6px 12px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 1rem;
-        }
-
-        .card {
-            background: var(--blanco);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .card h2 {
-            color: var(--verde);
-            border-bottom: 2px solid var(--rojo);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-
-        .grid-acciones {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-action {
-            background-color: var(--verde);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--verde);
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Entrenadores - EFD José Ternera</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1b4332;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form {
+      display: grid;
+      gap: 10px;
+      max-width: 400px;
+    }
+    input, select, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #1b4332;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #2d6a4f;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .btn-asistencia {
+      background-color: #52b788;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>👨‍🏫 Panel del Entrenador - EFD José Ternera</h1>
-        <a href="login.html" class="btn-logout">Cerrar Sesión</a>
-    </header>
+  <h1>Panel de Entrenadores</h1>
+  <p>Escuela de Formación Deportiva José Ternera</p>
 
-    <div class="container">
+  <!-- Formulario para agregar nuevo deportista -->
+  <div class="card">
+    <h2>Registrar Nuevo Deportista</h2>
+    <form id="formDeportista">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="text" id="categoria" placeholder="Categoría (ej. Sub-13, Infantil)" required>
+      <input type="number" id="edad" placeholder="Edad" required>
+      <input type="text" id="posicion" placeholder="Posición (ej. Delantero, Armador)" required>
+      <button type="submit">Guardar Deportista</button>
+    </form>
+  </div>
 
-        <div class="card">
-            <h2>Gestión Deportiva</h2>
-            <div class="grid-acciones">
-                <button class="btn-action">➕ Registrar Nuevo Deportista</button>
-                <button class="btn-action">📋 Tomar Asistencia</button>
-                <button class="btn-action">📊 Registrar Evaluación / Rendimiento</button>
-            </div>
-        </div>
+  <!-- Tabla de deportistas -->
+  <div class="card">
+    <h2>Listado de Deportistas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Posición</th>
+          <th>Asistencias</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaDeportistas">
+        <tr>
+          <td colspan="6">Cargando deportistas...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-        <div class="card">
-            <h2>Lista de Deportistas Registrados</h2>
-            <p style="margin-bottom: 10px; color: #666; font-size: 0.9rem;">
-                * La base de datos y la lista de nombres se vinculará en el siguiente paso.
-            </p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Asistencia</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="5" style="text-align: center; color: #777;">Sin datos registrados aún</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <!-- Librería Oficial de Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    </div>
+  <script>
+    // Conexión con Supabase
+    const SUPABASE_URL = 'https://qfoqiwutfcgjuhwebmrl.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_d9W-NIytSr9-TOUkdbjDzA_B4UKAcsF';
+    const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    const tablaBody = document.getElementById('tablaDeportistas');
+    const form = document.getElementById('formDeportista');
+
+    // Función para obtener y listar deportistas de la base de datos
+    async function cargarDeportistas() {
+      const { data, error } = await _supabase
+        .from('deportistas')
+        .select('*')
+        .order('id', { ascending: true });
+
+      if (error) {
+        console.error('Error al cargar:', error.message);
+        tablaBody.innerHTML = '<tr><td colspan="6">Error al cargar los datos.</td></tr>';
+        return;
+      }
+
+      tablaBody.innerHTML = '';
+
+      if (data.length === 0) {
+        tablaBody.innerHTML = '<tr><td colspan="6">No hay deportistas registrados aún.</td></tr>';
+        return;
+      }
+
+      data.forEach(deportista => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <td>${deportista.categoria || 'N/A'}</td>
+          <td>${deportista.nombre || 'Sin nombre'}</td>
+          <td>${deportista.edad || 'N/A'}</td>
+          <td>${deportista.posicion || 'N/A'}</td>
+          <td>${deportista.asistencia || 0}</td>
+          <td>
+            <button class="btn-asistencia" onclick="sumarAsistencia(${deportista.id}, ${deportista.asistencia || 0})">+1 Asistencia</button>
+          </td>
+        `;
+        tablaBody.appendChild(fila);
+      });
+    }
+
+    // Guardar nuevo deportista desde el formulario
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const categoria = document.getElementById('categoria').value;
+      const edad = parseInt(document.getElementById('edad').value);
+      const posicion = document.getElementById('posicion').value;
+
+      const { data, error } = await _supabase
+        .from('deportistas')
+        .insert([{ nombre, categoria, edad, posicion, asistencia: 0 }]);
+
+      if (error) {
+        alert('Error al guardar: ' + error.message);
+      } else {
+        alert('¡Deportista registrado con éxito!');
+        form.reset();
+        cargarDeportistas();
+      }
+    });
+
+    // Aumentar contador de asistencia
+    async function sumarAsistencia(id, asistenciaActual) {
+      const { error } = await _supabase
+        .from('deportistas')
+        .update({ asistencia: asistenciaActual + 1 })
+        .eq('id', id);
+
+      if (error) {
+        alert('Error al marcar asistencia: ' + error.message);
+      } else {
+        cargarDeportistas();
+      }
+    }
+
+    // Cargar los datos al abrir la página
+    document.addEventListener('DOMContentLoaded', cargarDeportistas);
+  </script>
 </body>
 </html>
