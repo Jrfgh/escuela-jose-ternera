@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Deportista - EFD José Ternera</title>
+    <style>
+        :root {
+            --verde: #1b7a42;
+            --blanco: #ffffff;
+            --rojo: #d92525;
+            --gris-fondo: #f4f6f8;
+            --texto: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--gris-fondo);
+            color: var(--texto);
+        }
+
+        header {
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--rojo);
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+        }
+
+        .btn-logout {
+            background-color: var(--rojo);
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: var(--verde);
+            border-bottom: 2px solid var(--rojo);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box {
+            background-color: var(--gris-fondo);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid var(--verde);
+        }
+
+        .info-box strong {
+            display: block;
+            color: var(--verde);
+            font-size: 0.85rem;
+        }
+
+        .stat-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 5px;
+            height: 15px;
+        }
+
+        .stat-fill {
+            background-color: var(--verde);
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>👦 Perfil del Deportista - EFD José Ternera</h1>
+        <a href="login.html" class="btn-logout">Cerrar Sesión</a>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Información General</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <strong>Deportista</strong>
+                    <p>Por asignar</p>
+                </div>
+                <div class="info-box">
+                    <strong>Categoría</strong>
+                    <p>Por asignar</p>
+                </div>
+                <div class="info-box">
+                    <strong>Posición</strong>
+                    <p>Por asignar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Rendimiento y Asistencia</h2>
+            <div style="margin-bottom: 15px;">
+                <p>Asistencia General (0%)</p>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div>
+                <p>Evaluación Técnica</p>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 0%; background-color: var(--rojo);"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
